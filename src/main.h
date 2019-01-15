@@ -10,6 +10,7 @@
 #include <GLFW/glfw3.h>
 
 #define GLM_FORCE_RADIANS
+#define GLM_ENABLE_EXPERIMENTAL
 #include <glm/glm.hpp>
 #include <glm/gtx/transform.hpp>
 #include <glm/gtc/matrix_transform.hpp>
@@ -77,9 +78,12 @@ extern float screen_zoom, screen_center_x, screen_center_y;
 void reset_screen();
 
 // ---- Colors ----
-extern const color_t COLOR_RED;
+extern const color_t COLOR_PLAYER;
 extern const color_t COLOR_GREEN;
 extern const color_t COLOR_BLACK;
 extern const color_t COLOR_BACKGROUND;
+extern const color_t COLOR_WALL;
+extern const color_t COLOR_COIN_IN;
+extern const color_t COLOR_COIN_OUT;
 
 #endif

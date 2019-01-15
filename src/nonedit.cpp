@@ -7,6 +7,7 @@
 #include <GLFW/glfw3.h>
 
 #define GLM_FORCE_RADIANS
+#define GLM_ENABLE_EXPERIMENTAL
 #include <glm/glm.hpp>
 #include <glm/gtx/transform.hpp>
 #include <glm/gtc/matrix_transform.hpp>
@@ -24,7 +25,6 @@ GLFWwindow*initGLFW(int width, int height) {
     if (!glfwInit()) {
         // exit(EXIT_FAILURE);
     }
-
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR,                 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR,                 3);
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT,           GL_TRUE);
