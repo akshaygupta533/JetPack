@@ -1,18 +1,17 @@
 #include "main.h"
 
-#ifndef COIN_H
-#define COIN_H
+#ifndef FIRELINE_H
+#define FIRELINE_H
 
 
-class Coin {
+class Fireline {
 public:
-    Coin() {}
-    Coin(float x, float y, int type);
+    Fireline() {}
+    Fireline(float x, float y, float angle);
     glm::vec3 position;
     float rotation;
-    int type;
-    float xvel;
-    float yvel;
+    float angle;
+    int up;
     bounding_box_t bb;
     void draw(glm::mat4 VP);
     void set_position(float x, float y);
@@ -20,6 +19,7 @@ public:
 private:
     VAO *object;
     VAO *object1;
+    VAO *object2;
 };
 
 #endif  //PLATFORM_H

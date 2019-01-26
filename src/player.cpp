@@ -6,6 +6,11 @@ Player::Player(float x, float y, color_t color) {
     this->rotation = 0;
     this->speed = 0.05;
     this->velocity = 0;
+    this->bb.x=x;
+    this->bb.y=y;
+    this->bb.height=1.1;
+    this->bb.width=0.3;
+    this->health = 10;
     // Our vertices. Three consecutive floats give a 3D vertex; Three consecutive vertices give a triangle.
     // A cube has 6 faces with 2 triangles each, so this makes 6*2=12 triangles, and 12*3 vertices
     static const GLfloat vertex_buffer_data[] = {
@@ -109,11 +114,13 @@ void Player::set_position(float x, float y) {
 void Player::tick_left() {
     //this->rotation += this->speed;
      this->position.x -= this->speed;
+     this->bb.x=this->position.x;
 }
 
 void Player::tick_right() {
     //this->rotation += this->speed;
-     this->position.x += this->speed;
+     this->position.x += this->speed/2;
+     this->bb.x=this->position.x;
 }
 
 void Player::jet() {
@@ -122,10 +129,14 @@ void Player::jet() {
     this->position.y += this->speed;
     else
     this->velocity=0;
+    this->bb.x=this->position.x;
+    this->bb.y=this->position.y+0.45;
 }
 void Player::gravity() {
     if(this->position.y>3)this->velocity = 0;
     this->velocity+= -this->speed/25;
     if(this->position.y-0.4<-2.9)this->velocity=0;
     this->position.y += this->velocity;
+    this->bb.x=this->position.x;
+    this->bb.y=this->position.y+0.45;
 }

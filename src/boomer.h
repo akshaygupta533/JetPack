@@ -1,25 +1,25 @@
 #include "main.h"
 
-#ifndef COIN_H
-#define COIN_H
+#ifndef BOOMER_H
+#define BOOMER_H
 
 
-class Coin {
+class Boomer {
 public:
-    Coin() {}
-    Coin(float x, float y, int type);
+    Boomer() {}
+    Boomer(float x, float y);
     glm::vec3 position;
     float rotation;
-    int type;
+    float acc;
     float xvel;
     float yvel;
+    int up;
     bounding_box_t bb;
     void draw(glm::mat4 VP);
     void set_position(float x, float y);
     bool will_draw;
 private:
     VAO *object;
-    VAO *object1;
 };
 
 #endif  //PLATFORM_H

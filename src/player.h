@@ -9,6 +9,7 @@ public:
     Player() {}
     Player(float x, float y, color_t color);
     glm::vec3 position;
+    int health;
     float velocity;
     float rotation;
     void draw(glm::mat4 VP);
@@ -18,6 +19,7 @@ public:
     void gravity();
     void jet();
     double speed;
+    bounding_box_t bb;
 private:
     VAO *object;
 };

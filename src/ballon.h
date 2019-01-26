@@ -1,18 +1,19 @@
 #include "main.h"
 
-#ifndef COIN_H
-#define COIN_H
+#ifndef BALLON_H
+#define BALLON_H
 
 
-class Coin {
+class Ballon {
 public:
-    Coin() {}
-    Coin(float x, float y, int type);
+    Ballon() {}
+    Ballon(float x, float y);
     glm::vec3 position;
     float rotation;
-    int type;
     float xvel;
     float yvel;
+    void gravity();
+    float speed;
     bounding_box_t bb;
     void draw(glm::mat4 VP);
     void set_position(float x, float y);

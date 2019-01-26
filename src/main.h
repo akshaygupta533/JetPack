@@ -73,6 +73,10 @@ struct bounding_box_t {
 };
 
 bool detect_collision(bounding_box_t a, bounding_box_t b);
+bool detect_fireline_col(bounding_box_t a, float x, float y, float angle);
+float dis_line(float a,float b,float c, float x, float y);
+bool detect_ring_col(bounding_box_t a,float x,float y,float radius);
+float dis_two_points(float x1,float y1,float x2,float y2);
 
 extern float screen_zoom, screen_center_x, screen_center_y;
 void reset_screen();
@@ -85,5 +89,8 @@ extern const color_t COLOR_BACKGROUND;
 extern const color_t COLOR_WALL;
 extern const color_t COLOR_COIN_IN;
 extern const color_t COLOR_COIN_OUT;
+extern const color_t COLOR_FIRE;
+extern const color_t COLOR_CRIMSON;
+extern const color_t COLOR_BALLON;
 
 #endif
